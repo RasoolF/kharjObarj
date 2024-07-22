@@ -12,7 +12,7 @@ class Expense(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{} {} {}".format("خرج = ", self.title, self.date)
+        return "{} {}".format( self.title, self.date)
             
 class Income(models.Model):
     title = models.CharField(_("عنوان"), max_length=255)
@@ -20,4 +20,4 @@ class Income(models.Model):
     amount = models.BigIntegerField(_("مقدار"))
     user = models.ForeignKey(User, on_delete=models.CASCADE) 
     def __str__(self):
-        return "{} {} {}".format("درآمد = ", self.title, self.date)
+        return "{} {} ".format( self.title, self.date)
